@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="eng">
+<head>
+    <title>State Birds</title>
+    <link rel="icon" href="/static/images/favicon.ico">
+</head>
+<body>
+    <p>Select a state to learn about birds and the weather challenges they face.</p>
+    <form method="get" action="/api/birds">
+        <div class="form-group">
+            <label for="state-select">State</label>
+            <select name="state" id="state-select">
+                {% for state in states %}
+                    <option value="{{state.abbreviation}}">{{state.state}}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </body>
+</html>
